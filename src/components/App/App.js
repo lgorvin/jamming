@@ -20,6 +20,15 @@ export default class App extends Component {
       {name : "playlistname4", artist: "artist4", album: "album4", id : 4}]
     }
   }
+  
+  addTrack(track) {
+    if (this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)) {
+      return
+    }
+    this.state.playlistTracks.push(track)
+    this.setState({ playlistTracks : this.state.playlistTracks })
+  }
+
   render() {
     return (
       <div>
