@@ -12,7 +12,12 @@ export default class App extends Component {
       searchResults : [{name : "Riding", artist: "Aries", album: "Wunderworld", id : 1}, 
       {name : "Fall Apart", artist: "Post Malone", album: "Stoney", id : 2}, 
       {name : "name3", artist: "artist3", album: "album3", id : 3}, 
-      {name : "name4", artist: "artist4", album: "album4", id : 4}]
+      {name : "name4", artist: "artist4", album: "album4", id : 4}], 
+      playlistName: 'My Playlist',
+      playlistTracks : [{name : "playlistname1", artist: "Aries", album: "Wunderworld", id : 1}, 
+      {name : "playlistname2", artist: "Post Malone", album: "Stoney", id : 2}, 
+      {name : "playlistname3", artist: "artist3", album: "album3", id : 3}, 
+      {name : "playlistname4", artist: "artist4", album: "album4", id : 4}]
     }
   }
   render() {
