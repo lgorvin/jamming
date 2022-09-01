@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../Track/Track.css'
 
 export default class Track extends Component {
   renderAction() {
