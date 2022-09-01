@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import '../App/App.css';
 import React, { Component } from 'react'
 import SearchBar from '../SearchBar/SearchBar';
@@ -21,15 +20,32 @@ export default class App extends Component {
     }
 
     this.addTrack = this.addTrack.bind(this)
+    this.removeTrack = this.removeTrack.bind(this);
   }
   
   addTrack(track) {
-    if (this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)) {
-      return
+    let tracks = this.state.playlistTracks;
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
     }
-    this.state.playlistTracks.push(track)
-    this.setState({ playlistTracks : this.state.playlistTracks })
+    tracks.push(track);
+    this.setState({ playlistTracks : tracks });
   }
+
+  removeTrack(track) {
+    let tracks = this.state.playlistTracks;
+    let result = [];
+
+    for (let i = 0; i < tracks.length; i++) {
+        if (track.id !== tracks[i].id) {
+            result.push(tracks[i]);
+        }
+    }
+
+    this.setState({
+        playlistTracks : result
+    })
+}
 
   render() {
     return (
@@ -39,7 +55,7 @@ export default class App extends Component {
           <SearchBar />
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
-            <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
+            <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack} />
           </div>
         </div>
       </div>
