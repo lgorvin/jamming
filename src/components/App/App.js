@@ -19,6 +19,8 @@ export default class App extends Component {
       {name : "playlistname3", artist: "artist3", album: "album3", id : 3}, 
       {name : "playlistname4", artist: "artist4", album: "album4", id : 4}]
     }
+
+    this.addTrack = this.addTrack.bind(this)
   }
   
   addTrack(track) {
@@ -36,7 +38,7 @@ export default class App extends Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} />
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
             <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
           </div>
         </div>
