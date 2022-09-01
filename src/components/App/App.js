@@ -8,8 +8,8 @@ import Playlist from '../Playlist/Playlist';
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { searchResults : [
-      {name : "Riding", artist: "Aries", album: "Wunderworld", id : 1}, 
+    this.state = { 
+      searchResults : [{name : "Riding", artist: "Aries", album: "Wunderworld", id : 1}, 
       {name : "Fall Apart", artist: "Post Malone", album: "Stoney", id : 2}, 
       {name : "name3", artist: "artist3", album: "album3", id : 3}, 
       {name : "name4", artist: "artist4", album: "album4", id : 4}]
